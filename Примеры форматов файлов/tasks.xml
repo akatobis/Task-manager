@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tasks>
+   <task>
+      <id>00d26a0f-c9b8-4f33-97f5-e5d2041bd7f6</id>
+      <title>Приготовить поесть</title>
+      <description>Нужно решить, рожки или картошка</description>
+      <endDate>2022-10-18T21:09:40.130Z</endDate>
+   </task>
+   <task>
+      <id>8e201092-5047-11ed-bdc3-0242ac120002</id>
+      <title>Прочитать книгу и написать по ней сочинение</title>
+      <description></description>
+      <endDate>2022-10-29T21:09:40.130Z</endDate>
+   </task>
+   <task>
+      <id>0ed601f6-5048-11ed-bdc3-0242ac120002</id>
+      <title>Забрать детей из школы</title>
+      <description>Надеюсь к двум они уже освободяться</description>
+      <endDate>2022-11-18T21:13:50.130Z</endDate>
+   </task>
+   <task>
+      <id>7983005c-fe1a-436f-8d44-364b23ed2b9c</id>
+      <title>Выучить flutter</title>
+      <description>На ютубе у меня где-то хорошие видео сохранились, можно в телеге какую-нибудь книгу поискать на крайняк</description>
+      <endDate>2022-10-18T21:09:40.130Z</endDate>
+   </task>
+</tasks>

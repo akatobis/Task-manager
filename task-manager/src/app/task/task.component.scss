@@ -1,0 +1,146 @@
+$border-color: #7b68ee;
+$button-edit-color: #DE0052;
+$button-edit-color-active: #EE3C7E;
+$button-complete-color: #009900;
+$button-complete-color-active: #3caa3c;
+
+.task {
+
+  &__info {
+    margin-top: 10px;
+    padding: 5px 20px;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  &__title {
+    width: 48%;
+    word-wrap: break-word;
+  }
+
+  &__rigth-blok {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 6px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  &__button-edit {
+    margin-left: 10px;
+    border: 1px solid $button-edit-color;
+    color: $button-edit-color;
+  }
+
+  &__button-edit:hover {
+    color: #fff;
+    background-color: $button-edit-color;
+  }
+
+  &__button-edit:active {
+    color: #fff;
+    background-color: $button-edit-color-active;
+  }
+
+  &__button-complete{
+    margin-left: 10px;
+    border: 1px solid $button-complete-color;
+    color: $button-complete-color;
+  }
+
+    &__button-complete:hover {
+    color: #fff;
+    background-color: $button-complete-color;
+  }
+
+  &__button-complete:active {
+    color: #fff;
+    background-color: $button-complete-color-active;
+  }
+
+  &__description {
+    margin-top: 1px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    word-break: break-all;
+  }
+}
+
+@media screen and (max-width: 1001px) {
+  .task {
+
+    &__info {
+      padding: 10px 25px;
+    }
+
+    &__title {
+      width: 57%;
+    }
+
+    &__rigth-blok {
+      width: 307px;
+      flex-direction: column;
+      align-items: end;
+    }
+  }
+}
+
+@media screen and (max-width: 881px) {
+  .task__title {
+      width: 50%;
+  }
+}
+
+@media screen and (max-width: 787px) {
+  .task {
+
+    &__title {
+      margin-bottom: 5px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &__info {
+      flex-direction: column;
+      align-items: end;
+    }
+
+    &__rigth-blok {
+      width: 424px;
+      flex-direction: row;
+    }
+  }
+}
+
+@media screen and (max-width: 622px) {
+  .task {
+
+    &__rigth-blok {
+      width: 307px;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .task__button {
+    padding: 4px 15px;
+    font-size: 13px;
+  }
+}

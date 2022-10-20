@@ -1,0 +1,28 @@
+<div class="task">
+  <div
+    class="task__info"
+    (click)="showDescription($event)"
+    [ngStyle]="{'border-color': isExceedingDeadline() ? 'red' : isApproachingDeadline() ? 'yellow' : '#7b68ee'}"
+  >
+    <h3 class="task__title">{{task.title}}</h3>
+
+    <div class="task__rigth-blok"> <!--  Чтобы сделать justify-content: space-between -->
+      <p class="task__end-data">{{task.endDate | date:'dd-MM-yyyy HH-mm'}}</p>
+      <div class="task__buttons">
+        <button class="task__button task__button-edit" (click)="edit($event)">Редактировать</button>
+        <button class="task__button task__button-complete" (click)="complete($event)">Завершить</button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="task__description"
+    *ngIf="isShowDescription"
+    [ngStyle]="{'border-color': isExceedingDeadline() ? 'red' : isApproachingDeadline() ? 'yellow' : '#7b68ee'}"
+  >
+    <p *ngIf="task.description !== ''; else noDescription">{{task.description}}</p>
+    <ng-template #noDescription>
+      <p>Описания нет</p>
+    </ng-template>
+  </div>
+</div>

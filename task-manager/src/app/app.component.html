@@ -1,0 +1,63 @@
+<article class="container">
+  <h1>Mенеджер задач</h1>
+
+  <section class="add-task">
+    <div class="add-task__content">
+      <div class="add-task__hints">
+        <p class="hints__text add-task__hint-title">Введите заголовок задачи:</p>
+        <p class="hints__text add-task__hint-description">Ведите описание задачи:</p>
+        <p class="hints__text add-task__hint-end-date">Введите дату окончания задачи:</p>
+      </div>
+
+      <div class="add-task__inputs">
+        <input
+          class="add-task__input add-task__input-title-task"
+          placeholder="Задача"
+          type="text"
+          #titleTask
+          [(ngModel)]="task.title"
+        >
+        <textarea
+          class="add-task__input add-task__input-description-task"
+          placeholder="Описание"
+          [(ngModel)]="task.description"
+        ></textarea>
+        <input
+          class="add-task__input add-task__input-end-date"
+          type="datetime-local"
+          [ngModel]="task.endDate"
+          (ngModelChange)="task.endDate = $event"
+        >
+      </div>
+    </div>
+
+    <div class="add-task__buttons-add">
+      <div *ngIf="!isEdit; else btnEditTask">
+        <button class="add-task__button-add" (click)="addTask(titleTask)">Добавить задачу</button>
+      </div>
+      <ng-template #btnEditTask>
+        <button class="add-task__button-add" (click)="finishEdit()">Завершить редактирование</button>
+      </ng-template>
+
+      <div class="add-task__button-add add-task__add-file">
+        <input class="add-file__input" type="file" (change)="uploadFile($event)" id="add-file__input">
+        <label for="add-file__input">{{innerStringAddFile}}</label>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="tasks" cdkDropList (cdkDropListDropped)="drop($event)">
+    <h2>Задачи:</h2>
+
+    <app-task
+      *ngFor="let task of tasks"
+      draggable="true"
+      [task]="task"
+      (onCompleteTask)="onComlete($event)"
+      (onEditTask)="onEdit($event)"
+      cdkDrag
+    >
+    </app-task>
+  </section>
+</article>
